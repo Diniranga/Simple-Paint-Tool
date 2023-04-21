@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+        <title>Paint</title>
+        <script type="text/javascript" src="paint.js"></script>
+        <link rel="stylesheet" href="des.css">
+    </head>
+
+    <body background="background.png" >
+        <center>
+        <h1>--- Paint Tool ---</h1>
+        <table border="0">
+            <tr>
+                <td><b>Brush Color: </b></td>
+                <td><input type="color" value="#000" onchange="changeColor(this.value)"></td>
+                <td></td>
+                <td><b>Brush Size: </b></td>
+                <td><input type="range" id="sizeinput" min="1" max="50" value="1" oninput="resizeBrush(this.value)">&nbsp;<output id="sizeOutput" >1</output></td>
+            </tr>
+        </table>
+        <h2></h2>
+        <canvas width='900' height='550' id="canvas1" onmousedown="startpaint()" onmousemove="dopaint(event.offsetX,event.offsetY)" onmouseup="endpaint()"></canvas><br>
+        <input type="button" id="clear" value="Clear" onclick="clearCanvas()">
+        </center>
+        
+    </body>
+</html>
